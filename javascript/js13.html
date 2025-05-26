@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture 5 Index</title>
+    <style>
+        
+    </style>
+    
+   <script>
+    function showPage(page){
+        // Hide all pages
+        var pages = document.querySelectorAll('div');
+        pages.forEach(function(p) {
+            p.style.display = 'none';
+        });
+        // Show the selected page
+        document.querySelector(`#${page}`).style.display = "block";      
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show the first page by default
+        showPage('page1');
+
+        // Add click event listeners to buttons
+        var buttons = document.querySelectorAll('button');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var page = this.getAttribute('data-page');
+                showPage(page);
+            });
+        });
+    });
+    
+        
+   </script>
+ 
+</head>
+<body>
+    <button data-page="page1">Page 1</button>
+    <button data-page="page2">Page 2</button>
+    <button data-page="page3">Page 3</button>
+    <div id="page1"><h1>This is page 1.</h1> </div>
+    <div id="page2"><h1>This is page 2.</h1> </div>
+    <div id="page3"><h1>This is page 3.</h1></div>
+
+
+</body>
+</html>

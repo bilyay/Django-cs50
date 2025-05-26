@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture 5 Index</title>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').onsubmit = function() {
+                //document.querySelector('tag_name')
+                //document.querySelector('.class_name')
+                //document.querySelector('#id_name')
+                const name=document.querySelector('#name').value;
+                alert(`Hello, ${name}!`);
+
+            };
+        });
+
+
+
+    </script>
+ 
+</head>
+<body>
+    <h1>Welcome to Django <a href="https://www.youtube.com/watch?v=x5trGVMKTdY">CS50</a> Lecture 5</h1>
+    <p>This is the index page.</p>
+
+    <h2>Hello!</h2>
+    <form>
+        <input type="text" id="name" placeholder="Enter your name" autofocus>
+        <input type="Submit" >
+
+    </form>    
+</body>
+</html>

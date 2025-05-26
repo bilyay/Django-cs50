@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture 5 Index</title>
+    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // By default , submit button is disabled
+            document.querySelector('#submit').disabled = true;
+            // Enable the submit button when the input field is not empty
+            document.querySelector('#task').onkeyup = () => {
+                document.querySelector('#submit').disabled = 
+                    document.querySelector('#task').value.length === 0;
+
+            };
+
+           document.querySelector('form').onsubmit=() => {
+                const task = document.querySelector('#task').value;
+                console.log(task);
+                // Create a new list item
+                const li = document.createElement('li');
+                li.textContent = task;
+                // Append the new list item to the list
+                document.querySelector('ul').append(li);
+                // Clear the input field
+                document.querySelector('#task').value = '';
+                // Disable the submit button again
+                document.querySelector('#submit').disabled = true;
+                // Prevent the form from submitting
+                // and refreshing the page
+                // This is important to keep the page from reloading
+
+
+
+
+                return false; // Prevent form submission
+            };
+            
+        });
+
+
+    </script>
+ 
+</head>
+<body>
+    <h1>Welcome to Django <a href="https://www.youtube.com/watch?v=x5trGVMKTdY">CS50</a> Lecture 5</h1>
+    <p>This is the index page.</p>
+
+    <h1>Tasks</h1>
+    <ul>
+
+    </ul>
+    <form>
+        <input type="text" id="task" placeholder="Enter a task">
+        <input id ="submit" type="submit" value="Add Task">
+    </form>
+
+
+</body>
+</html>

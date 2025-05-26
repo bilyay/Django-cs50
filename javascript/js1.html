@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture 5 Index</title>
+    <script>
+        function hello() {
+            alert("Hello, CS50!");
+        }
+        let count = 0;
+        function increment() {
+            count++;
+            alert("Count: " + count);
+        }
+
+        function goodby1() {
+            document.querySelector("h2").innerHTML = "Goodbye!";
+            
+        }
+        function goodby2() {
+            let header1 = document.querySelector("h2");
+            const header = document.querySelector("h2");
+            if (header.innerHTML === "Goodbye!") {
+                header.innerHTML = "Hello!";
+            } else {
+                header.innerHTML = "Goodbye!";
+            }
+             
+        }
+
+        let x=0;
+        function goodby3() {
+            
+            if (x == 0) {
+                document.querySelector("h2").innerHTML = "Goodbye!";
+                x = 1;
+            } else {
+                document.querySelector("h2").innerHTML = "Hello!";
+                x = 0;
+            }
+            
+        }
+        
+      
+
+    </script>
+</head>
+<body>
+    <h1>Welcome to Django <a href="https://www.youtube.com/watch?v=x5trGVMKTdY">CS50</a> Lecture 5</h1>
+    <p>This is the index page.</p>
+
+    <h2>0</h2>
+    <button onclick="goodby3()">Hello</button>
+</body>
+</html>
